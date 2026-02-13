@@ -1,0 +1,10 @@
+openai
+langchain
+sentence_transformers
+langchain_community
+langchain_text_splitters 
+pymongo
+PyPDF
+google
+fastapi
+pydantic
