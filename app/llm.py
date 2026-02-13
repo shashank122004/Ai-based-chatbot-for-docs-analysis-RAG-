@@ -1,9 +1,10 @@
 import google.generativeai as genai
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # Configure Gemini
-os.environ["GOOGLE_API_KEY"]="AIzaSyD4Mzl3RJJkamA_-C6_RoPA4RRbfu4ZD60"
-genai.configure()
+api_key=os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=api_key)
 
 def generate_answer(query,context_docs):
     # Convert retrieved docs to a single context string
@@ -26,6 +27,4 @@ def generate_answer(query,context_docs):
     # Generate response
     response = model.generate_content(prompt)
 
-    print(response.text)
     return response.text
-

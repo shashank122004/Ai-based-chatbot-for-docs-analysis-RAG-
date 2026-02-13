@@ -1,7 +1,11 @@
 from pymongo import MongoClient
-
+import os
 # Connect to your MongoDB deployment
-client = MongoClient("mongodb+srv://shashanksingh122004_db_user:shashank12@cluster0.lgaicsv.mongodb.net/?appName=Cluster0")
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = MongoClient(os.getenv("MONGOURI"))
 collection =  client["rag_db"]["test"]
 
 # Insert documents into the collection
