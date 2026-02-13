@@ -17,7 +17,7 @@ def get_query_results(query):
   """Gets results from a vector search query."""
 
   query_embedding = get_embedding(query)
-  print(query_embedding) 
+  #print(query_embedding) 
   pipeline = [
       {
             "$vectorSearch": {
@@ -36,7 +36,7 @@ def get_query_results(query):
   ]
 
   results = collection.aggregate(pipeline)
-  print(results)
+  #print(results)
 
   array_of_results = []
   for doc in results:

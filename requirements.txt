@@ -9,3 +9,4 @@ google
 fastapi
 pydantic
 dotenv
+python-multipart

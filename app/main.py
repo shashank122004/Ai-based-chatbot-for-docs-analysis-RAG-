@@ -16,6 +16,7 @@ async def upload_pdf(file: UploadFile = File(...)):
     """
     Upload a PDF and store its embeddings in MongoDB
     """
+
     if file.content_type != "application/pdf":
         return {"error": "Only PDF files are supported"}
 

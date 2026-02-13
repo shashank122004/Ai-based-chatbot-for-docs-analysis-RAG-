@@ -9,6 +9,7 @@ from app.db import collection
 
 
 def ingest_pdf(file):
+    collection.delete_many({})
     pdf_id = str(uuid.uuid4())
 
     # 1. save uploaded PDF to a temp file
